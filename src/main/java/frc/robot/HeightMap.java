@@ -6,16 +6,16 @@ public enum HeightMap {
     Cargo1(2), Hatch1(1), Cargo2(4), Hatch2(3), Cargo3(6), Hatch3(5);
 
     //The storage variable for the height.
-    private final int encoderPosition;
+    public final int pos;
 
     //Constructor for the data class.
     HeightMap(int encoderPosition) {
-        this.encoderPosition = encoderPosition;
+        this.pos = encoderPosition;
     }
 
     //Getter method for the encoder position.
     public int height() {
-        return this.encoderPosition;
+        return this.pos;
     }
 
 }

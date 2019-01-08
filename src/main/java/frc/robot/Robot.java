@@ -30,20 +30,6 @@ public class Robot extends TimedRobot {
 
   public static OI m_oi;
 
-  public Joystick leftStick;
-  public Joystick rightStick;
-
-  public Spark leftDrive1;
-  public Spark leftDrive2;
-  
-  public Spark rightDrive1;
-  public Spark rightDrive2;
-
-  public Spark elevator;
-  public Spark articulatingHandBoi;
-  public Spark succTop;
-  public Spark succBottom;
-
   Encoder lift;
 
   /**
@@ -52,23 +38,9 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+
     m_oi = new OI();
-    
-    leftStick = new Joystick(0);
-    rightStick = new Joystick(1);
-    
-    leftDrive1 = new Spark(0);
-    leftDrive2 = new Spark(1);
-    rightDrive1 = new Spark(2);
-    rightDrive2 = new Spark(3);
 
-    elevator = new Spark(4);
-    articulatingHandBoi = new Spark(5);
-    succTop = new Spark(6);
-    succBottom = new Spark(7);
-
-    lift = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
-    lift.setMaxPeriod(.1);
   }
 
   /**
@@ -94,21 +66,6 @@ public class Robot extends TimedRobot {
     Scheduler.getInstance().run();
   }
 
-  /**
-   * This autonomous (along with the chooser code above) shows how to select
-   * between different autonomous modes using the dashboard. The sendable
-   * chooser code works with the Java SmartDashboard. If you prefer the
-   * LabVIEW Dashboard, remove all of the chooser code and uncomment the
-   * getString code to get the auto name from the text box below the Gyro
-   *
-   * <p>You can add additional auto modes by adding additional commands to the
-   * chooser code above (like the commented example) or additional comparisons
-   * to the switch structure below with additional strings & commands.
-   */
-
-  /**
-   * This function is called periodically during autonomous.
-   */
 
   @Override
   public void teleopInit() {

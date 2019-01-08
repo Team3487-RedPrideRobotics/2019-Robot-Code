@@ -23,4 +23,15 @@ public class RobotMap {
   // number and the module. For example you with a rangefinder:
   // public static int rangefinderPort = 1;
   // public static int rangefinderModule = 1;
+
+  Spark liftMotor = new Spark();
+
+  public Spark leftDrive1 = new Spark();
+  public Spark leftDrive2 = new Spark();
+  public Spark leftDrive3 = new Spark();
+  
+  public Spark rightDrive1 = new Spark();
+  public Spark rightDrive2 = new Spark();
+  public Spark rightDrive3 = new Spark();
+
 }

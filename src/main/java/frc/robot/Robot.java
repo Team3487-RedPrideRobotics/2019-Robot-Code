@@ -26,8 +26,21 @@ public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static OI m_oi;
 
-  Command m_autonomousCommand;
-  SendableChooser<Command> m_chooser = new SendableChooser<>();
+  public Joystick leftStick;
+  public Joystick rightStick;
+
+  public Spark leftDrive1;
+  public Spark leftDrive2;
+  
+  public Spark rightDrive1;
+  public Spark rightDrive2;
+
+  public Spark elevator;
+  public Spark articulatingHandBoi;
+  public Spark succTop;
+  public Spark succBottom;
+
+  Encoder lift;
 
   /**
    * This function is run when the robot is first started up and should be
@@ -36,9 +49,22 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
-    m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
-    // chooser.addOption("My Auto", new MyAutoCommand());
-    SmartDashboard.putData("Auto mode", m_chooser);
+    
+    leftStick = new Joystick(0);
+    rightStick = new Joystick(1);
+    
+    leftDrive1 = new Spark(0);
+    leftDrive2 = new Spark(1);
+    rightDrive1 = new Spark(2);
+    rightDrive2 = new Spark(3);
+
+    elevator = new Spark(4);
+    articulatingHandBoi = new Spark(5);
+    succTop = new Spark(6);
+    succBottom = new Spark(7);
+
+    lift = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
+    lift.setMaxPeriod(.1);
   }
 
   /**
@@ -49,9 +75,6 @@ public class Robot extends TimedRobot {
    * <p>This runs after the mode specific periodic functions, but before
    * LiveWindow and SmartDashboard integrated updating.
    */
-  @Override
-  public void robotPeriodic() {
-  }
 
   /**
    * This function is called once each time the robot enters Disabled mode.
@@ -78,30 +101,10 @@ public class Robot extends TimedRobot {
    * chooser code above (like the commented example) or additional comparisons
    * to the switch structure below with additional strings & commands.
    */
-  @Override
-  public void autonomousInit() {
-    m_autonomousCommand = m_chooser.getSelected();
-
-    /*
-     * String autoSelected = SmartDashboard.getString("Auto Selector",
-     * "Default"); switch(autoSelected) { case "My Auto": autonomousCommand
-     * = new MyAutoCommand(); break; case "Default Auto": default:
-     * autonomousCommand = new ExampleCommand(); break; }
-     */
-
-    // schedule the autonomous command (example)
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.start();
-    }
-  }
 
   /**
    * This function is called periodically during autonomous.
    */
-  @Override
-  public void autonomousPeriodic() {
-    Scheduler.getInstance().run();
-  }
 
   @Override
   public void teleopInit() {
@@ -109,9 +112,7 @@ public class Robot extends TimedRobot {
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
     // this line or comment it out.
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.cancel();
-    }
+
   }
 
   /**

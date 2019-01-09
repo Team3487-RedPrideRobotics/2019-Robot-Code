@@ -10,7 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.robot.commands.H1MoveCommand;;
+import frc.robot.commands.SetLiftCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -24,39 +24,46 @@ public class OI {
   // number it is.
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
+  private final Joystick left = new Joystick(0);
+  private final Joystick right = new Joystick(1);
 
-  Joystick left = new Joystick(0);
-  Joystick right = new Joystick(1);
+  public OI() {
+    final Button cargo1Button = new JoystickButton(left, 8);
+    cargo1Button.whenPressed(new SetLiftCommand(HeightMap.Cargo1));
 
-  Button cargo1Button = new JoystickButton(left, 8);
-  cargo1Button.whenPressed(new H1MoveCommand());
+    final Button hatch1Button = new JoystickButton(left, 7);
+    hatch1Button.whenPressed(new SetLiftCommand(HeightMap.Hatch1));
 
-  Button hatch1Button = new JoystickButton(left, 7);
+    final Button cargo2Button =  new JoystickButton(left, 10);
+    cargo2Button.whenPressed(new SetLiftCommand(HeightMap.Cargo2));
 
-  Button cargo2Button =  new JoystickButton(left, 10);
-  Button hatch2Button = new JoystickButton(left, 9);
+    final Button hatch2Button = new JoystickButton(left, 9);
+    hatch2Button.whenPressed(new SetLiftCommand(HeightMap.Hatch2));
 
-  Button cargo3Button =  new JoystickButton(left, 12);
-  Button hatch3Button = new JoystickButton(left, 11);
+    final Button cargo3Button =  new JoystickButton(left, 12);
+    cargo3Button.whenPressed(new SetLiftCommand(HeightMap.Cargo3));
 
+    final Button hatch3Button = new JoystickButton(left, 11);
+    hatch3Button.whenPressed(new SetLiftCommand(HeightMap.Hatch3));
 
-  // There are a few additional built in buttons you can use. Additionally,
-  // by subclassing Button you can create custom triggers and bind those to
-  // commands the same as any other Button.
+    // There are a few additional built in buttons you can use. Additionally,
+    // by subclassing Button you can create custom triggers and bind those to
+    // commands the same as any other Button.
 
-  //// TRIGGERING COMMANDS WITH BUTTONS
-  // Once you have a button, it's trivial to bind it to a button in one of
-  // three ways:
+    //// TRIGGERING COMMANDS WITH BUTTONS
+    // Once you have a button, it's trivial to bind it to a button in one of
+    // three ways:
 
-  // Start the command when the button is pressed and let it run the command
-  // until it is finished as determined by it's isFinished method.
-  // button.whenPressed(new ExampleCommand());
+    // Start the command when the button is pressed and let it run the command
+    // until it is finished as determined by it's isFinished method.
+    // button.whenPressed(new ExampleCommand());
 
-  // Run the command while the button is being held down and interrupt it once
-  // the button is released.
-  // button.whileHeld(new ExampleCommand());
+    // Run the command while the button is being held down and interrupt it once
+    // the button is released.
+    // button.whileHeld(new ExampleCommand());
 
-  // Start the command when the button is released and let it run the command
-  // until it is finished as determined by it's isFinished method.
-  // button.whenReleased(new ExampleCommand());
+    // Start the command when the button is released and let it run the command
+    // until it is finished as determined by it's isFinished method.
+    // button.whenReleased(new ExampleCommand());
+  }
 }

@@ -4,19 +4,23 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.HeightMap;
 import frc.robot.Robot;
 
-public class H1MoveCommand extends Command {
+public class SetLiftCommand extends Command {
 
-    public H1MoveCommand() {
+    private double rot;
+
+    public SetLiftCommand(HeightMap rotations) {
 
         super("Hatch1");
         requires(Robot.liftSubsystem);
+
+        this.rot = rotations.rot;
 
     }
 
     @Override
     protected void initialize() {
 
-        Robot.liftSubsystem.setSetpoint((double) HeightMap.Hatch1.rot);
+        Robot.liftSubsystem.setSetpoint(rot);
 
     }
 

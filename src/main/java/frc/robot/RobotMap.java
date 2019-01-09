@@ -7,6 +7,9 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.Spark;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -24,14 +27,14 @@ public class RobotMap {
   // public static int rangefinderPort = 1;
   // public static int rangefinderModule = 1;
 
-  Spark liftMotor = new Spark();
+  public static Spark liftMotor = new Spark(0);
 
-  public Spark leftDrive1 = new Spark();
-  public Spark leftDrive2 = new Spark();
-  public Spark leftDrive3 = new Spark();
+  public static Spark leftDrive1 = new Spark(1);
+  public static Spark leftDrive2 = new Spark(2);
   
-  public Spark rightDrive1 = new Spark();
-  public Spark rightDrive2 = new Spark();
-  public Spark rightDrive3 = new Spark();
+  public static Spark rightDrive1 = new Spark(3);
+  public static Spark rightDrive2 = new Spark(4);
+
+  public static Encoder liftEncoder = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
 
 }

@@ -11,16 +11,17 @@ import frc.robot.RobotMap;
  */
 public class LiftSubsystem extends PIDSubsystem {
 
-	private Encoder encoder;
-	private Spark liftMotor;
+	private final Encoder encoder = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
+  	private final Spark liftMotor = new Spark(RobotMap.liftMotor);
 
     public LiftSubsystem() {
 
 		super(1,0,0);
-		this.liftMotor = RobotMap.liftMotor;
-		this.encoder = RobotMap.liftEncoder;
 
 		encoder.setMaxPeriod(0.1);
+
+		addChild("Encoder",encoder);
+		addChild("Lift Motor", liftMotor);
 
     }
 
@@ -40,6 +41,12 @@ public class LiftSubsystem extends PIDSubsystem {
 	@Override
 	protected void initDefaultCommand() {
 		
+	}
+
+	public void log() {
+
+		//TODO Put SmartDashboard Data here
+
 	}
 
 

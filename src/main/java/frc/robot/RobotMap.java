@@ -27,14 +27,12 @@ public class RobotMap {
   // public static int rangefinderPort = 1;
   // public static int rangefinderModule = 1;
 
-  public static Spark liftMotor = new Spark(0);
+  public static int liftMotor = 0;
 
-  public static Spark leftDrive1 = new Spark(1);
-  public static Spark leftDrive2 = new Spark(2);
+  public static int leftDrive1 = (1);
+  public static int leftDrive2 = 2;
   
-  public static Spark rightDrive1 = new Spark(3);
-  public static Spark rightDrive2 = new Spark(4);
-
-  public static Encoder liftEncoder = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
+  public static int rightDrive1 =(3);
+  public static int rightDrive2 =(4);
 
 }

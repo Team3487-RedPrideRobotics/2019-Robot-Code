@@ -10,6 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.SetLiftCommand;
 
 /**
@@ -28,6 +29,8 @@ public class OI {
   private final Joystick right = new Joystick(1);
 
   public OI() {
+    SmartDashboard.putData("Set Lift To Cargo1", new SetLiftCommand(HeightMap.Cargo1));
+
     final Button cargo1Button = new JoystickButton(left, 8);
     cargo1Button.whenPressed(new SetLiftCommand(HeightMap.Cargo1));
 

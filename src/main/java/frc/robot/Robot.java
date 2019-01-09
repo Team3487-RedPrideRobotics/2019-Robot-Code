@@ -51,10 +51,10 @@ public class Robot extends TimedRobot {
    * You can use it to reset any subsystem information you want to clear when
    * the robot is disabled.
    */
-  @Override
+  /*@Override
   public void disabledInit() {
   }
-
+*/
   @Override
   public void disabledPeriodic() {
     Scheduler.getInstance().run();

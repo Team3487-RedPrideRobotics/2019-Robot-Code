@@ -36,6 +36,7 @@ public class OI {
     SmartDashboard.putData("Set Lift To Hatch2", new SetLiftCommand(HeightMap.Hatch2));
     SmartDashboard.putData("Set Lift To Cargo3", new SetLiftCommand(HeightMap.Cargo3));
     SmartDashboard.putData("Set Lift To Hatch3", new SetLiftCommand(HeightMap.Hatch3));
+    SmartDashboard.putData("Set Lift To Base Height", new SetLiftCommand(HeightMap.Base));
 
     final Button cargo1Button = new JoystickButton(left, 8);
     cargo1Button.whenPressed(new SetLiftCommand(HeightMap.Cargo1));

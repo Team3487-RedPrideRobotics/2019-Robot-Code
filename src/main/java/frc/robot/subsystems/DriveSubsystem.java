@@ -19,18 +19,14 @@ public class DriveSubsystem extends Subsystem {
     private SpeedControllerGroup leftDrive = new SpeedControllerGroup(backLeftMotor,frontLeftMotor);
     private SpeedControllerGroup rightDrive = new SpeedControllerGroup(backRightMotor, frontRightMotor);
 
-    private DifferentialDrive m_drive = new DifferentialDrive(leftDrive, rightDrive);
+    //WE ARE NOT USING DIFFERENTIAL DRIVE I'VE SAID THIS SO MANY TIMES NO
 
-    private Encoder leftEncoder = new Encoder(2, 3, false, Encoder.EncodingType.k4X);
-    private Encoder rightEncoder = new Encoder(4, 5, false, Encoder.EncodingType.k4X);
 
     public DriveSubsystem() {
         super();
         frontLeftMotor.setInverted(true);
         frontRightMotor.setInverted(true);
         addChild("Drive", m_drive);
-        addChild("Left Encoder", leftEncoder);
-        addChild("Right Encoder", rightEncoder);
 
     }
 

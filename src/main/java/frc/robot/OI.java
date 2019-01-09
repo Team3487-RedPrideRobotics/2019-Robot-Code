@@ -29,7 +29,13 @@ public class OI {
   private final Joystick right = new Joystick(1);
 
   public OI() {
+    
     SmartDashboard.putData("Set Lift To Cargo1", new SetLiftCommand(HeightMap.Cargo1));
+    SmartDashboard.putData("Set Lift To Hatch1", new SetLiftCommand(HeightMap.Hatch1));
+    SmartDashboard.putData("Set Lift To Cargo2", new SetLiftCommand(HeightMap.Cargo2));
+    SmartDashboard.putData("Set Lift To Hatch2", new SetLiftCommand(HeightMap.Hatch2));
+    SmartDashboard.putData("Set Lift To Cargo3", new SetLiftCommand(HeightMap.Cargo3));
+    SmartDashboard.putData("Set Lift To Hatch3", new SetLiftCommand(HeightMap.Hatch3));
 
     final Button cargo1Button = new JoystickButton(left, 8);
     cargo1Button.whenPressed(new SetLiftCommand(HeightMap.Cargo1));

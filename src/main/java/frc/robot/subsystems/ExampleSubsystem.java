@@ -8,7 +8,12 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-
+ /*
+ Jacob, before you start to make changes in every document (which yes I will admit is good)
+ you MUST talk to me about it.  Changing 34 thousand things and then expecting me to understand is not okay.
+ This is a necessary change, please abide by it.  I will be putting this on all docs
+ in case you don't visit this one.
+*/
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
  */

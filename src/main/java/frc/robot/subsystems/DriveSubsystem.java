@@ -1,6 +1,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -39,7 +40,11 @@ public class DriveSubsystem extends Subsystem {
         setDefaultCommand(new TankDrive());
     }
 
-    
+    public void drive(Joystick leftStick, Joystick rightStick) {
+
+        m_drive.tankDrive(leftStick.getY(), rightStick.getY());
+
+    }
 
 
 

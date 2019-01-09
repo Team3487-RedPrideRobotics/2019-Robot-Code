@@ -9,6 +9,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.LiftSubsystem;
 
@@ -23,6 +24,7 @@ public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
 
   public static LiftSubsystem liftSubsystem = new LiftSubsystem();
+  public static DriveSubsystem driveSubsystem = new DriveSubsystem();
 
   public static OI m_oi;
 

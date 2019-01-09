@@ -3,6 +3,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.RobotMap;
 
 /**
@@ -45,7 +46,7 @@ public class LiftSubsystem extends PIDSubsystem {
 
 	public void log() {
 
-		//TODO Put SmartDashboard Data here
+		SmartDashboard.putData("Height Setting", this);
 
 	}
 

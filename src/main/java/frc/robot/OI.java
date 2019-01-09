@@ -75,4 +75,15 @@ public class OI {
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
   }
+
+  public Joystick getStick(boolean isLeftStick) {
+
+    if(isLeftStick) {
+      return left;
+
+    } else {
+      return right;
+    }
+
+  }
 }

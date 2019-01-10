@@ -33,7 +33,6 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
 
-    //The Operator Interface instantiation
     m_oi = new OI();
 
   }

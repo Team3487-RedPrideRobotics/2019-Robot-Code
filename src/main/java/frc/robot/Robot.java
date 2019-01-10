@@ -76,13 +76,6 @@ public class Robot extends TimedRobot {
   /**
    * This function is called periodically during operator control.
    */
-
-    /*
- Jacob, before you start to make changes in every document (which yes I will admit is good)
- you MUST talk to me about it.  Changing 34 thousand things and then expecting me to understand is not okay.
- This is a necessary change, please abide by it.  I will be putting this on all docs
- in case you don't visit this one.
-*/
   @Override
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
@@ -96,7 +89,6 @@ public class Robot extends TimedRobot {
   public void testPeriodic() {
   }
 
-  //This calls all of the subsystems to push their log data to the smartdashboard.
   public void log() {
 
     liftSubsystem.log();

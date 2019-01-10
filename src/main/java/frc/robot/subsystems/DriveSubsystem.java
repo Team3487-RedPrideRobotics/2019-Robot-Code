@@ -10,12 +10,7 @@ import frc.robot.RobotMap;
 import frc.robot.commands.TankDrive;
 
 public class DriveSubsystem extends Subsystem {
- /*
- Jacob, before you start to make changes in every document (which yes I will admit is good)
- you MUST talk to me about it.  Changing 34 thousand things and then expecting me to understand is not okay.
- This is a necessary change, please abide by it.  I will be putting this on all docs
- in case you don't visit this one.
-*/
+
     private Spark backLeftMotor = new Spark(RobotMap.leftDrive2);
     private Spark frontLeftMotor = new Spark(RobotMap.leftDrive1);
 
@@ -25,16 +20,18 @@ public class DriveSubsystem extends Subsystem {
     private SpeedControllerGroup leftDrive = new SpeedControllerGroup(backLeftMotor,frontLeftMotor);
     private SpeedControllerGroup rightDrive = new SpeedControllerGroup(backRightMotor, frontRightMotor);
 
-    //WE ARE NOT USING DIFFERENTIAL DRIVE I'VE SAID THIS SO MANY TIMES NO
+    private DifferentialDrive m_drive = new DifferentialDrive(leftDrive, rightDrive);
 
+    private Encoder leftEncoder = new Encoder(2, 3, false, Encoder.EncodingType.k4X);
+    private Encoder rightEncoder = new Encoder(4, 5, false, Encoder.EncodingType.k4X);
 
     public DriveSubsystem() {
         super();
         frontLeftMotor.setInverted(true);
-
-        //By the way, only the right side motors should be inverted.  I can explain but I look stupid doing it.
         frontRightMotor.setInverted(true);
         addChild("Drive", m_drive);
+        addChild("Left Encoder", leftEncoder);
+        addChild("Right Encoder", rightEncoder);
 
     }
 

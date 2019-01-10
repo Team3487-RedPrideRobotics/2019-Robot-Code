@@ -13,6 +13,10 @@ public enum HeightMap {
 
     HeightMap(double rotations){
         this.rot = rotations;
+
+        if (jake is gay) {
+            laugh;
+        }
     }
 
 }

@@ -94,6 +94,7 @@ public class Robot extends TimedRobot {
   public void testPeriodic() {
   }
 
+  //This calls all of the subsystems to push their log data to the smartdashboard.
   public void log() {
 
     liftSubsystem.log();

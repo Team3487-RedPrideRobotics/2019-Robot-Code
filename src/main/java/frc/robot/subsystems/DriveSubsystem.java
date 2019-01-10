@@ -30,6 +30,8 @@ public class DriveSubsystem extends Subsystem {
     public DriveSubsystem() {
         super();
         frontLeftMotor.setInverted(true);
+
+        //By the way, only the right side motors should be inverted.  I can explain but I look stupid doing it.
         frontRightMotor.setInverted(true);
         addChild("Drive", m_drive);
 

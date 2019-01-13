@@ -36,16 +36,10 @@ public class OI {
     SmartDashboard.putData("Set Lift To Hatch2", new SetLiftCommand(HeightMap.Hatch2));
     SmartDashboard.putData("Set Lift To Cargo3", new SetLiftCommand(HeightMap.Cargo3));
     SmartDashboard.putData("Set Lift To Hatch3", new SetLiftCommand(HeightMap.Hatch3));
-    SmartDashboard.putData("Set Lift To Base Height", new SetLiftCommand(HeightMap.Base));
 
     final Button cargo1Button = new JoystickButton(left, 8);
     cargo1Button.whenPressed(new SetLiftCommand(HeightMap.Cargo1));
- /*
- Jacob, before you start to make changes in every document (which yes I will admit is good)
- you MUST talk to me about it.  Changing 34 thousand things and then expecting me to understand is not okay.
- This is a necessary change, please abide by it.  I will be putting this on all docs
- in case you don't visit this one.
-*/
+
     final Button hatch1Button = new JoystickButton(left, 7);
     hatch1Button.whenPressed(new SetLiftCommand(HeightMap.Hatch1));
 
@@ -80,5 +74,16 @@ public class OI {
     // Start the command when the button is released and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
+  }
+
+  public Joystick getStick(boolean isLeftStick) {
+
+    if(isLeftStick) {
+      return left;
+
+    } else {
+      return right;
+    }
+
   }
 }

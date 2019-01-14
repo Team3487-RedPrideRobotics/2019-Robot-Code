@@ -1,16 +1,15 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
-<<<<<<< Updated upstream:src/main/java/frc/robot/commands/TankDrive.java
-public class TankDrive extends Command {
-=======
 public class TankDriveCommand extends Command {
     
     public TankDriveCommand() {
 
         requires(Robot.driveSubsystem);
->>>>>>> Stashed changes:src/main/java/frc/robot/commands/TankDriveCommand.java
+    
+    }
 
     
 

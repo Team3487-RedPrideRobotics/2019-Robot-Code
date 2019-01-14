@@ -3,19 +3,19 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class TankDrive extends Command {
+public class TankDriveCommand extends Command {
     
-    public TankDrive() {
+    public TankDriveCommand() {
 
         requires(Robot.driveSubsystem);
-
+    
     }
+
+    
 
     @Override
     protected void execute() {
         
-        Robot.driveSubsystem.drive(Robot.m_oi.getStick(true),Robot.m_oi.getStick(false));
-
     }
 
     @Override
@@ -24,10 +24,8 @@ public class TankDrive extends Command {
     }
 
     @Override
-    protected void finalize() throws Throwable {
-        
+    protected void end() {
+        Robot.driveSubsystem.drive(0,0);
     }
-
-
 
 }

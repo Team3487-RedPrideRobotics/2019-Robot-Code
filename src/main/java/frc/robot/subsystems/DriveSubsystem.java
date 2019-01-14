@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import frc.robot.RobotMap;
-import frc.robot.commands.TankDrive;
+import frc.robot.commands.TankDriveCommand;
 
 public class DriveSubsystem extends Subsystem {
 
@@ -37,12 +37,18 @@ public class DriveSubsystem extends Subsystem {
 
     @Override
     protected void initDefaultCommand() {
-        setDefaultCommand(new TankDrive());
+        setDefaultCommand(new TankDriveCommand());
     }
 
     public void drive(Joystick leftStick, Joystick rightStick) {
 
         m_drive.tankDrive(leftStick.getY(), rightStick.getY());
+
+    }
+
+    public void drive(double left, double right) {
+
+        m_drive.tankDrive(left, right);
 
     }
 

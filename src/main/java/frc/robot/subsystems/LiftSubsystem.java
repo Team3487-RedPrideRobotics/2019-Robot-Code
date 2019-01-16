@@ -12,13 +12,14 @@ import frc.robot.RobotMap;
  */
 public class LiftSubsystem extends PIDSubsystem {
 
-	private final Encoder encoder = new Encoder(0, 1, false, Encoder.EncodingType.k4X);
+	private final Encoder encoder = new Encoder(RobotMap.liftEncoder0, RobotMap.liftEncoder1, false, Encoder.EncodingType.k4X);
   	private final Spark liftMotor = new Spark(RobotMap.liftMotor);
 
     public LiftSubsystem() {
 
 		super(1,0,0);
 
+		encoder.setDistancePerPulse(1);
 		encoder.setMaxPeriod(0.1);
 
 		addChild("Encoder",encoder);

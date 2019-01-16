@@ -25,11 +25,12 @@ public class OI {
   // number it is.
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
-  private final Joystick left = new Joystick(0);
-  private final Joystick right = new Joystick(1);
+  public final Joystick left = new Joystick(0);
+  public final Joystick right = new Joystick(1);
 
   public OI() {
     
+    SmartDashboard.putData("Set to Low", new SetLiftCommand(HeightMap.Bottom));
     SmartDashboard.putData("Set Lift To Cargo1", new SetLiftCommand(HeightMap.Cargo1));
     SmartDashboard.putData("Set Lift To Hatch1", new SetLiftCommand(HeightMap.Hatch1));
     SmartDashboard.putData("Set Lift To Cargo2", new SetLiftCommand(HeightMap.Cargo2));
@@ -76,14 +77,4 @@ public class OI {
     // button.whenReleased(new ExampleCommand());
   }
 
-  public Joystick getStick(boolean isLeftStick) {
-
-    if(isLeftStick) {
-      return left;
-
-    } else {
-      return right;
-    }
-
-  }
 }

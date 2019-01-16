@@ -19,7 +19,7 @@ public class LiftSubsystem extends PIDSubsystem {
 
 		super(1,0,0);
 
-		encoder.setDistancePerPulse(1);
+		encoder.setDistancePerPulse(1D/12D);
 		encoder.setMaxPeriod(0.1);
 
 		addChild("Encoder",encoder);

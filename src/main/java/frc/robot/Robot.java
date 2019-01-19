@@ -21,23 +21,23 @@ import frc.robot.subsystems.LiftSubsystem;
  * project.
  */
 public class Robot extends TimedRobot {
+
+  public static OI m_oi = new OI();
+
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
 
   public static LiftSubsystem liftSubsystem = new LiftSubsystem();
+  
   public static DriveSubsystem driveSubsystem = new DriveSubsystem();  
 
-  public static OI m_oi;
+  
 
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
    */
   @Override
-  public void robotInit() {
-
-    m_oi = new OI();
-
-  }
+  public void robotInit() {}
 
   /**
    * This function is called every robot packet, no matter the mode. Use
@@ -59,8 +59,8 @@ public class Robot extends TimedRobot {
 */
   @Override
   public void disabledPeriodic() {
-    Scheduler.getInstance().run();
-    log();
+    //Scheduler.getInstance().run();
+    //log();
   }
 
 

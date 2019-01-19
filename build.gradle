@@ -40,9 +40,6 @@ def includeDesktopSupport = false
 // Maven central needed for JUnit
 repositories {
     mavenCentral()
-    maven {
-        url  "https://dl.bintray.com/bak3dnet/robotics" 
-    }
 }
 
 // Defining my dependencies. In this case, WPILib (+ friends), and vendor libraries.
@@ -53,8 +50,6 @@ dependencies {
     nativeZip wpi.deps.vendor.jni(wpi.platforms.roborio)
     nativeDesktopZip wpi.deps.vendor.jni(wpi.platforms.desktop)
     testCompile 'junit:junit:4.12'
-    compile 'robotics:Display-Drivers:1.1.0'
-    compile 'robotics:LightDrive12SerialDrivers:1.1.0'
 }
 
 // Setting up my Jar File. In this case, adding all libraries into the main jar ('fat jar')

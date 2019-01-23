@@ -29,8 +29,8 @@ public class DriveSubsystem extends Subsystem {
     public DriveSubsystem() {
         
         super();
-        frontRightMotor.setInverted(true);
-        backRightMotor.setInverted(true);
+        rightDrive.setInverted(true);
+        leftDrive.setInverted(true);
         addChild("Drive", m_drive);
         /*
         addChild("Left Encoder", leftEncoder);

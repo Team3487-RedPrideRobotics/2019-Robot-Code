@@ -27,6 +27,8 @@ public class RobotMap {
   //DIO
   public static int liftEncoder0 = 0;
   public static int liftEncoder1 = 1;
+  public static int testEncoder0 = 2;
+  public static int testEncoder1 = 3;
 
   //PWM
   public static int liftMotor = 2;
@@ -36,5 +38,7 @@ public class RobotMap {
   
   public static int rightDrive1 = 5; //Front
   public static int rightDrive2 = 6; //Back
+
+  public static int testMotor = 3;
 
 }

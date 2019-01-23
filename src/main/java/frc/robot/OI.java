@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.commands.Rotate128;
 import frc.robot.commands.SetLiftCommand;
 
 /**
@@ -60,6 +61,9 @@ public class OI {
     final Button hatch3Button = new JoystickButton(left, 11);
     hatch3Button.whenPressed(new SetLiftCommand(HeightMap.Hatch3));
 
+
+    final Button testButton = new JoystickButton(right, 7);
+    testButton.whenPressed(new Rotate128());
     // There are a few additional built in buttons you can use. Additionally,
     // by subclassing Button you can create custom triggers and bind those to
     // commands the same as any other Button.

@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.LiftSubsystem;
+import frc.robot.subsystems.Test128;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -22,22 +23,24 @@ import frc.robot.subsystems.LiftSubsystem;
  */
 public class Robot extends TimedRobot {
 
-  public static OI m_oi = new OI();
-
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
 
   public static LiftSubsystem liftSubsystem = new LiftSubsystem();
   
   public static DriveSubsystem driveSubsystem = new DriveSubsystem();  
 
-  
+  public static Test128 test128 = new Test128();
+
+  public static OI m_oi;
 
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
    */
   @Override
-  public void robotInit() {}
+  public void robotInit() {
+    m_oi = new OI();
+  }
 
   /**
    * This function is called every robot packet, no matter the mode. Use

@@ -19,9 +19,8 @@ public class LiftSubsystem extends PIDSubsystem {
     public LiftSubsystem() {
 
 		super(1,0,0);
-
 		//TODO edit proportion to accurate value
-		encoder.setDistancePerPulse(1D);
+		encoder.setDistancePerPulse(1D/12D);
 		encoder.setMaxPeriod(0.1);
 
 		addChild("Encoder",encoder);

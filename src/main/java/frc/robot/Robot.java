@@ -22,7 +22,7 @@ import frc.robot.subsystems.LiftSubsystem;
  */
 public class Robot extends TimedRobot {
 
-  public static OI m_oi = new OI();
+  public static OI m_oi;
 
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
 
@@ -37,7 +37,11 @@ public class Robot extends TimedRobot {
    * used for any initialization code.
    */
   @Override
-  public void robotInit() {}
+  public void robotInit() {
+    
+    m_oi = new OI();
+
+  }
 
   /**
    * This function is called every robot packet, no matter the mode. Use

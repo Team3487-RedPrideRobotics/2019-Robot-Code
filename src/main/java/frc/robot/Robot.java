@@ -26,9 +26,9 @@ public class Robot extends TimedRobot {
 
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
 
-  public static LiftSubsystem liftSubsystem;
+  public static LiftSubsystem liftSubsystem = new LiftSubsystem();
   
-  public static DriveSubsystem driveSubsystem;  
+  public static DriveSubsystem driveSubsystem = new DriveSubsystem();  
 
   
 
@@ -38,9 +38,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-
-    driveSubsystem = new DriveSubsystem();
-    liftSubsystem = new LiftSubsystem();
+    
     m_oi = new OI();
 
   }

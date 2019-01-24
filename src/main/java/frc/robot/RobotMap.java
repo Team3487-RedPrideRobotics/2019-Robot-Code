@@ -34,7 +34,7 @@ public class RobotMap {
   public static int leftDrive1 = 1; //Front
   public static int leftDrive2 = 0; //Back
   
-  public static int rightDrive1 = 5; //Front
-  public static int rightDrive2 = 6; //Back
+  public static int rightDrive1 = 6; //Front
+  public static int rightDrive2 = 5; //Back
 
 }

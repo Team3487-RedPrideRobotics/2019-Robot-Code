@@ -9,10 +9,10 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import frc.robot.subsystems.ClawSubsystem;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.LiftSubsystem;
-import frc.robot.subsystems.Test128;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -27,9 +27,9 @@ public class Robot extends TimedRobot {
 
   public static LiftSubsystem liftSubsystem = new LiftSubsystem();
   
-  public static DriveSubsystem driveSubsystem = new DriveSubsystem();  
+  public static DriveSubsystem driveSubsystem = new DriveSubsystem();
 
-  public static Test128 test128 = new Test128();
+  public static ClawSubsystem clawSubsytem = new ClawSubsystem();
 
   public static OI m_oi;
 
@@ -89,7 +89,7 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
-    log();
+    //log();
   }
 
   /**
@@ -102,7 +102,7 @@ public class Robot extends TimedRobot {
   //This calls all of the subsystems to push their log data to the smartdashboard.
   public void log() {
 
-    liftSubsystem.log();
+    
 
   }
 }

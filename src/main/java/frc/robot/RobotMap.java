@@ -27,18 +27,26 @@ public class RobotMap {
   //DIO
   public static int liftEncoder0 = 0;
   public static int liftEncoder1 = 1;
-  public static int testEncoder0 = 2;
-  public static int testEncoder1 = 3;
+
+  public static int liftLimiter = 2;
+
+  public static int clawLimiter = 3; 
 
   //PWM
-  public static int liftMotor = 2;
+  public static int liftMotor = 0;
 
-  public static int leftDrive1 = 1; //Front
-  public static int leftDrive2 = 0; //Back
+  public static int leftDrive1 = 3; //Front
+  public static int leftDrive2 = 4; //Back
   
-  public static int rightDrive1 = 5; //Front
-  public static int rightDrive2 = 6; //Back
+  public static int rightDrive1 = 8; //Front
+  public static int rightDrive2 = 9; //Back
 
-  public static int testMotor = 3;
+  public static int clawMotor = 7;
+
+  //Constants
+  public static double clawSpeed = 0.2;
+
+  public static double liftSlow = 0.2;
+  public static double liftFast = 0.4;
 
 }

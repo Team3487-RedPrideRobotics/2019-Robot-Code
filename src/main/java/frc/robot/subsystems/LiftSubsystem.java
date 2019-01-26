@@ -1,9 +1,9 @@
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Spark;
-import edu.wpi.first.wpilibj.command.PIDSubsystem;
-import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.RobotMap;
@@ -17,6 +17,12 @@ public class LiftSubsystem extends Subsystem {
 	private final Encoder encoder = new Encoder(RobotMap.liftEncoder0, RobotMap.liftEncoder1, false, Encoder.EncodingType.k4X);
 	private final Spark liftMotor = new Spark(RobotMap.liftMotor);
 
+	private final DigitalInput bottomLimiter = new DigitalInput(RobotMap.liftLimiter);
+
+	private final Timer resetTimer = new Timer();
+
+	private double resetTime = 0;
+
 	//The Direction of the motor
 	private boolean direction = true;
 	//The target height for the lift
@@ -29,7 +35,7 @@ public class LiftSubsystem extends Subsystem {
 		addChild("Encoder",encoder);
 		addChild("Lift Motor", liftMotor);
 
-  }
+  	}
 
 	@Override
 	protected void initDefaultCommand() {}
@@ -47,6 +53,16 @@ public class LiftSubsystem extends Subsystem {
 	}
 
 	public void calculate() {
+
+		if(bottomLimiter.get() && resetTimer.get()-resetTime >= 5) {
+
+			liftMotor.set(0);
+			encoder.reset();
+			resetTime = resetTimer.get();
+			return;
+			
+		}
+
 		if(setPoint > encoder.getDistance()){
 			direction = true;
 		} else {
@@ -54,10 +70,12 @@ public class LiftSubsystem extends Subsystem {
 		}
 		
 		if(onTarget()) {
-			liftMotor.set(0);
-		} else if(Math.abs(setPoint-encoder.getDistance()) > 0.01) {
-			liftMotor.set(0.15);
-		} else if(Math.abs(setPoint-encoder.getDistance()) > 0.)
+			liftMotor.set(0.1);
+		} else if(Math.abs(setPoint-encoder.getDistance()) > 0.75) {
+			liftMotor.set(direction ? RobotMap.liftSlow : -RobotMap.liftSlow);
+		} else if(Math.abs(setPoint-encoder.getDistance()) > 1.25) {
+			liftMotor.set(direction ? RobotMap.liftFast : -RobotMap.liftFast);
+		}
 	}
 
 	public void log() {

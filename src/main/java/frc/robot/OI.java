@@ -39,8 +39,10 @@ public class OI {
     SmartDashboard.putData("Set Lift To Cargo3", new SetLiftCommand(HeightMap.Cargo3));
     SmartDashboard.putData("Set Lift To Hatch3", new SetLiftCommand(HeightMap.Hatch3));
 
+    SmartDashboard.putData("Test Encoder", new Rotate128());
+
     //TODO Set low to actual button to be used
-    final Button lowButton = new JoystickButton(left, 6);
+    final Button lowButton = new JoystickButton(right, 2);
     lowButton.whenPressed(new SetLiftCommand(HeightMap.Bottom));
 
     final Button cargo1Button = new JoystickButton(left, 8);

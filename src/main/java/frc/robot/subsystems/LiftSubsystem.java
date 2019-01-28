@@ -1,6 +1,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.PIDSourceType;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -19,9 +20,12 @@ public class LiftSubsystem extends PIDSubsystem {
     public LiftSubsystem() {
 
 		super(1,0,0);
+		encoder.setPIDSourceType(PIDSourceType.kDisplacement);
 		//TODO edit proportion to accurate value
-		encoder.setDistancePerPulse(1D/12D);
+		encoder.setDistancePerPulse(1D/(1024D*64D*2D));
 		encoder.setMaxPeriod(0.1);
+		this.setAbsoluteTolerance(0.01);
+		this.getPIDController().setContinuous(false);
 
 		addChild("Encoder",encoder);
 		addChild("Lift Motor", liftMotor);

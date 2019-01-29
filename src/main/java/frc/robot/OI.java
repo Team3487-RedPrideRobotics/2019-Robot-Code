@@ -10,8 +10,6 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.commands.Rotate128;
 import frc.robot.commands.SetLiftCommand;
 
 /**
@@ -29,15 +27,10 @@ public class OI {
   public final Joystick left = new Joystick(0);
   public final Joystick right = new Joystick(1);
 
+  public final Button closeClaw = new JoystickButton(left, 1);// Left 1, Close
+  public final Button openClaw = new JoystickButton(right, 1);// Right 1 open
+
   public OI() {
-    
-    SmartDashboard.putData("Set to Low", new SetLiftCommand(HeightMap.Bottom));
-    SmartDashboard.putData("Set Lift To Cargo1", new SetLiftCommand(HeightMap.Cargo1));
-    SmartDashboard.putData("Set Lift To Hatch1", new SetLiftCommand(HeightMap.Hatch1));
-    SmartDashboard.putData("Set Lift To Cargo2", new SetLiftCommand(HeightMap.Cargo2));
-    SmartDashboard.putData("Set Lift To Hatch2", new SetLiftCommand(HeightMap.Hatch2));
-    SmartDashboard.putData("Set Lift To Cargo3", new SetLiftCommand(HeightMap.Cargo3));
-    SmartDashboard.putData("Set Lift To Hatch3", new SetLiftCommand(HeightMap.Hatch3));
 
     //TODO Set low to actual button to be used
     final Button lowButton = new JoystickButton(left, 6);
@@ -60,10 +53,7 @@ public class OI {
 
     final Button hatch3Button = new JoystickButton(left, 11);
     hatch3Button.whenPressed(new SetLiftCommand(HeightMap.Hatch3));
-
-
-    final Button testButton = new JoystickButton(right, 7);
-    testButton.whenPressed(new Rotate128());
+ 
     // There are a few additional built in buttons you can use. Additionally,
     // by subclassing Button you can create custom triggers and bind those to
     // commands the same as any other Button.

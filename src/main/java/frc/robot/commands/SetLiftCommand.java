@@ -25,6 +25,11 @@ public class SetLiftCommand extends Command {
     }
 
     @Override
+    protected void execute() {
+        Robot.liftSubsystem.calculate();
+    }
+
+    @Override
     protected boolean isFinished() {
         return Robot.liftSubsystem.onTarget();
     }

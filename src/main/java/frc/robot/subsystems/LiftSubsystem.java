@@ -50,6 +50,7 @@ public class LiftSubsystem extends Subsystem {
 			return true;
 		}
 		return false;
+
 	}
 
 	public void calculate() {
@@ -70,7 +71,7 @@ public class LiftSubsystem extends Subsystem {
 		}
 		
 		if(onTarget()) {
-			liftMotor.set(0.1);
+			liftMotor.set(direction ? -0.1 : 0.1);
 		} else if(Math.abs(setPoint-encoder.getDistance()) > 0.75) {
 			liftMotor.set(direction ? RobotMap.liftSlow : -RobotMap.liftSlow);
 		} else if(Math.abs(setPoint-encoder.getDistance()) > 1.25) {

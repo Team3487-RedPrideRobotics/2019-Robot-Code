@@ -31,15 +31,14 @@ public class RobotMap {
   public static int testEncoder1 = 3;
 
   //PWM
-  public static int liftMotor = 7; //Confirmed by electrical
+  public static int liftMotor = 2;
 
-  public static int leftDrive1 = 3; //Front
-  public static int leftDrive2 = 4; //Back
+  public static int leftDrive1 = 1; //Front
+  public static int leftDrive2 = 0; //Back
   
-  public static int rightDrive1 = 8; //Front
-  public static int rightDrive2 = 9; //Back
+  public static int rightDrive1 = 5; //Front
+  public static int rightDrive2 = 6; //Back
 
-  public static int testMotor = 2; // now claw motor
+  public static int testMotor = 3;
 
-  // public static int clawArticulation = 1;
 }

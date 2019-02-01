@@ -29,8 +29,11 @@ public class DriveSubsystem extends Subsystem {
     public DriveSubsystem() {
         
         super();
+
+        //Testing based constants
         rightDrive.setInverted(true);
         leftDrive.setInverted(true);
+        
         addChild("Drive", m_drive);
         /*
         addChild("Left Encoder", leftEncoder);
@@ -38,17 +41,26 @@ public class DriveSubsystem extends Subsystem {
         */
     }
 
+    /**
+     * This method automatically sets a command to get the joysticks.
+     */
     @Override
     protected void initDefaultCommand() {
         setDefaultCommand(new TankDriveCommand());
     }
-
+    
+    /**
+     * Takes two joysticks and sets the speed on the y axis.
+     */
     public void drive(Joystick leftStick, Joystick rightStick) {
 
         m_drive.tankDrive(leftStick.getY(), rightStick.getY());
 
     }
 
+    /**
+     * Sets the drive motors to the set speed between -1 to 1
+     */
     public void drive(double left, double right) {
 
         m_drive.tankDrive(left, right);

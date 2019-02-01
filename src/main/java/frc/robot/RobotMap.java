@@ -24,29 +24,58 @@ public class RobotMap {
   // public static int rangefinderPort = 1;
   // public static int rangefinderModule = 1;
 
+  /**
+   * 
+   * PORTS
+   *      Used for motors, switches, sensors, etc.
+   * 
+  **/
+
   //DIO
-  public static int liftEncoder0 = 0;
-  public static int liftEncoder1 = 1;
+  public static final int liftEncoder0 = 0;
+  public static final int liftEncoder1 = 1;
 
-  public static int liftLimiter = 2;
+  public static final int liftLimiter = 2;
 
-  public static int clawLimiter = 3; 
+  public static final int clawLimiter = 3; 
 
   //PWM
-  public static int liftMotor = 0;
+  public static final int liftMotor = 6;
 
-  public static int leftDrive1 = 3; //Front
-  public static int leftDrive2 = 4; //Back
+  public static final int leftDrive1 = 3; //Front Side
+  public static final int leftDrive2 = 4; //Back Side
   
-  public static int rightDrive1 = 8; //Front
-  public static int rightDrive2 = 9; //Back
+  public static final int rightDrive1 = 8; //Front Side
+  public static final int rightDrive2 = 9; //Back Side
 
-  public static int clawMotor = 7;
+  public static final int clawMotor = 7;
 
-  //Constants
-  public static double clawSpeed = 0.2;
+  /**
+   * 
+   * CONSTANTS  
+   *    Used for setting speed constants, etc.
+   * 
+  **/
 
-  public static double liftSlow = 0.2;
-  public static double liftFast = 0.4;
+  //Claw Speed
+  public static final double clawSpeed = 0.2;
+
+  // Lift Speeds - Absolute values (Up and Down)
+  public static final double liftSlow = 0.2; //Precision
+  public static final double liftFast = 0.8; //Move!
+
+  public static final double low = 0;
+
+  /** 
+   * Heigths are doubled because the numbers are rotations, and
+   * rotations are 1/2".
+  */
+  public static final double hatch1 = 19*2;
+  public static final double cargo1 = 27.5*2;
+  public static final double hatch2 = 47*2;
+  public static final double cargo2 = 55.5*2;
+  public static final double hatch3 = 75*2;
+  public static final double cargo3 = 83.5*2;
+
 
 }

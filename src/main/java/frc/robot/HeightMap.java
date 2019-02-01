@@ -3,7 +3,7 @@ package frc.robot;
 public enum HeightMap {
 
     //In Inches
-    Bottom(0), Cargo1(1.5), Hatch1(1), Cargo2(2.5), Hatch2(2), Cargo3(3.5), Hatch3(3);
+    Bottom(RobotMap.low), Cargo1(RobotMap.cargo1), Hatch1(RobotMap.hatch1), Cargo2(RobotMap.cargo2), Hatch2(RobotMap.hatch2), Cargo3(RobotMap.cargo3), Hatch3(RobotMap.hatch3);
     
     public double rot;
 

@@ -11,7 +11,6 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import frc.robot.subsystems.ClawSubsystem;
 import frc.robot.subsystems.DriveSubsystem;
-import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.LiftSubsystem;
 
 /**
@@ -22,8 +21,6 @@ import frc.robot.subsystems.LiftSubsystem;
  * project.
  */
 public class Robot extends TimedRobot {
-
-  public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
 
   public static LiftSubsystem liftSubsystem = new LiftSubsystem();
   

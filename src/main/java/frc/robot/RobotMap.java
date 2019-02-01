@@ -70,12 +70,19 @@ public class RobotMap {
    * Heigths are doubled because the numbers are rotations, and
    * rotations are 1/2".
   */
-  public static final double hatch1 = 19*2;
-  public static final double cargo1 = 27.5*2;
-  public static final double hatch2 = 47*2;
-  public static final double cargo2 = 55.5*2;
-  public static final double hatch3 = 75*2;
-  public static final double cargo3 = 83.5*2;
+  public static final double hatch1 = 19;
+  public static final double cargo1 = 27.5;
+  public static final double hatch2 = 47;
+  public static final double cargo2 = 55.5;
+  public static final double hatch3 = 75;
+  public static final double cargo3 = 83.5;
+
+  public static final double rotationsPerInch = 2;
+  public static final double countsPerRotation = 1024;
+  public static final double liftGearBox = 64;
+
+  public static final double percentErrorLow = .75;
+  public static final double percentErrorHigh = 1.25;
 
 
 }

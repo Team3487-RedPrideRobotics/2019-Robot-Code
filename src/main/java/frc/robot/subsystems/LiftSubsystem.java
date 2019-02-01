@@ -31,7 +31,7 @@ public class LiftSubsystem extends Subsystem {
     public LiftSubsystem() {
 
 		encoder.setMaxPeriod(0.1);
-		encoder.setDistancePerPulse(1D/(2D*64D*1024D));
+		encoder.setDistancePerPulse(1D/(RobotMap.rotationsPerInch*RobotMap.liftGearBox*RobotMap.countsPerRotation));
 		addChild("Encoder",encoder);
 		addChild("Lift Motor", liftMotor);
 
@@ -72,9 +72,9 @@ public class LiftSubsystem extends Subsystem {
 		
 		if(onTarget()) {
 			liftMotor.set(0);
-		} else if(Math.abs(setPoint-encoder.getDistance()) > 0.75) {
+		} else if(Math.abs(setPoint-encoder.getDistance()) > RobotMap.percentErrorLow) {
 			liftMotor.set(direction ? RobotMap.liftSlow : -RobotMap.liftSlow);
-		} else if(Math.abs(setPoint-encoder.getDistance()) > 1.25) {
+		} else if(Math.abs(setPoint-encoder.getDistance()) > RobotMap.percentErrorHigh) {
 			liftMotor.set(direction ? RobotMap.liftFast : -RobotMap.liftFast);
 		}
 	}
